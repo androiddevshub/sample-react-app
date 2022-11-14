@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Component from './Component';
 import ClassComp from './ClassComp';
+import HookComp from './HookComp';
 // functional component
 function App() {
 
@@ -22,13 +23,15 @@ function App() {
 
   return (
     <div className="App">
-      <Component
+      {/* <Component
         // props keys and values
         name="Shubham"
         email="shubjain440@gmail.com"
         phone="7892342344"
-       />
+       /> */}
        {/* <ClassComp /> */}
+       <HookComp />
+       <HookComp1 />
     </div>
   );
 }
