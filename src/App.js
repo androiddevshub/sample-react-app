@@ -1,8 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
 import Component from './Component';
 import ClassComp from './ClassComp';
 import HookComp from './HookComp';
+import HookComp1 from './HookComp1';
+
+// initial state
+import {UserDetailContext} from "./context"
+
 // functional component
 function App() {
 
@@ -16,9 +22,11 @@ function App() {
     return num1*num2;
   }
 
-  const user = {
+  const userDetails = {
     firstName: "Shubham",
-    lastName: "Jain"
+    lastName: "Jain",
+    city: "Firozabad",
+    country: "India"
   }
 
   return (
@@ -30,8 +38,11 @@ function App() {
         phone="7892342344"
        /> */}
        {/* <ClassComp /> */}
-       <HookComp />
-       <HookComp1 />
+       <UserDetailContext.Provider value={userDetails}>
+        <HookComp />
+        <HookComp1 />
+       </UserDetailContext.Provider>
+       
     </div>
   );
 }

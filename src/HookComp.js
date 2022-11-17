@@ -1,6 +1,10 @@
-import React, {useState, useEffect, useRef} from "react";
+import React, {useState, useEffect, useRef, useContext} from "react";
+import {UserDetailContext} from "./context"
 
 function HookComp() {
+
+  const userData = useContext(UserDetailContext);
+  console.log("userData", userData)
 
  
   const [counter, setCounter] = useState(0);
@@ -37,6 +41,14 @@ function HookComp() {
       <button onClick={handleSubtract}>-</button> */}
       <input ref={inputEl} type="text" />
       <button onClick={onButtonClick}>Focus the input</button>
+
+
+      <div style={{width: "300px", border: "1px solid black"}}>
+        <h1>User name</h1>
+        <p>{userData.firstName} {userData.lastName}</p>
+        
+      </div>
+
     </>
   )
 }
